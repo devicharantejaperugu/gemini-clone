@@ -1,0 +1,42 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Build/Dist
+dist/
+build/
+
+# Local data
+uploads/
+*.json
+!available_models.json
+!models.json
+!models_utf8.json
+output.json
+search_test.json
+unique_models.txt
+model_names.txt
+all_models.txt
+available-models.txt
+models.txt

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- Markdown and Sanitization Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <button class="menu-btn" id="menuToggle">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+            <button class="new-chat-btn" id="newChatBtn">
+                <span class="material-icons-outlined">add</span>
+                <span class="sidebar-text">New chat</span>
+            </button>
+            <div id="historyList" class="history-list">
+                <!-- Previous chats will be injected here -->
+            </div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="sidebar-item">
+                <span class="material-icons-outlined">help_outline</span>
+                <span class="sidebar-text">Help</span>
+            </div>
+            <div class="sidebar-item">
+                <span class="material-icons-outlined">history</span>
+                <span class="sidebar-text">Activity</span>
+            </div>
+            <div class="sidebar-item">
+                <span class="material-icons-outlined">settings</span>
+                <span class="sidebar-text">Settings</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="header-left">
+                <div class="logo">Gemini</div>
+            </div>
+            <div class="header-right">
+                <button class="upgrade-btn">
+                    <span class="material-icons-outlined">auto_awesome</span>
+                    Upgrade to Google AI Plus
+                </button>
+                <div class="icon-btn">
+                    <span class="material-icons-outlined">apps</span>
+                </div>
+                <div class="user-profile">
+                    A
+                </div>
+            </div>
+        </header>
+
+        <section class="hero" id="heroSection">
+            <h1>Hi User</h1>
+            <h2>Where should we start?</h2>
+        </section>
+
+        <section class="chat-results" id="chatResults" style="display: none;">
+            <!-- Messages will be injected here -->
+        </section>
+
+        <section class="search-container">
+            <div class="search-box-wrapper">
+                <div id="attachmentPreview" class="attachment-preview"></div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Ask Gemini" id="promptInput">
+                </div>
+                <div class="search-controls">
+                    <div class="controls-left">
+                        <div class="icon-btn" id="imageBtn">
+                            <span class="material-icons-outlined">image</span>
+                        </div>
+                        <input type="file" id="fileInput" style="display: none;" accept=".pdf,.txt,.js,.py,.md,image/*">
+                        <button class="control-btn">
+                            <span class="material-icons-outlined">tune</span>
+                            Tools
+                            <div class="dot"></div>
+                        </button>
+                    </div>
+                    <div class="controls-right">
+                        <button class="control-btn" id="modelSelector">
+                            Fast
+                            <span class="material-icons-outlined">expand_more</span>
+                        </button>
+                        <div class="input-actions-right">
+                            <button class="action-btn" id="stopBtn" style="display: none; color: #f28b82;" title="Stop Generation">
+                                <span class="material-icons-outlined">stop_circle</span>
+                            </button>
+                            <button class="action-btn send-btn" id="sendBtn" title="Send message">
+                                <span class="material-icons-outlined">send</span>
+                            </button>
+                        </div>
+                        <div class="icon-btn" id="voiceBtn">
+                            <span class="material-icons-outlined">mic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestion-chips">
+                <div class="chip">
+                    <span class="material-icons-outlined">image</span>
+                    Create image
+                </div>
+                <div class="chip">
+                    <span class="material-icons-outlined">sports_cricket</span>
+                    Follow IPL
+                </div>
+                <div class="chip">
+                    <span class="material-icons-outlined">music_note</span>
+                    Create music
+                </div>
+                <div class="chip">
+                    <span class="chip-text">Boost my day</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-banner" id="welcomeBanner">
+            <span class="material-icons-outlined close-banner" id="closeBanner">close</span>
+            <h3>Welcome to <span class="gemini-text">Gemini</span>, your personal AI assistant</h3>
+            <p>
+                <a href="#">Google Terms</a> and the <a href="#">Gemini Apps Privacy Notice</a> apply. Chats are reviewed and used to improve Google AI. 
+                <a href="#">Learn about your choices</a>. Gemini can make mistakes, so double-check it. Info <a href="#">about your location</a> is also stored with your Gemini Apps activity.
+            </p>
+        </section>
+    </main>
+
+    <script src="aurora.js"></script>
+    <script src="splash.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
