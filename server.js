@@ -182,7 +182,8 @@ function crawlPage(url, onLog) {
     return new Promise((resolve) => {
         if (onLog) onLog(`🕸️ Starting crawl for: ${url}`);
         const env = { ...process.env, PYTHONIOENCODING: 'utf-8' };
-        const pythonProcess = spawn('.venv/Scripts/python', ['crawler.py', '--url', url], { env });
+        const pythonCmd = process.env.NODE_ENV === 'production' ? 'python3' : '.venv/Scripts/python';
+        const pythonProcess = spawn(pythonCmd, ['crawler.py', '--url', url], { env });
 
         let stdout = '';
         let stderr = '';
@@ -227,7 +228,8 @@ function webSearch(query, onLog) {
     return new Promise((resolve) => {
         if (onLog) onLog(`🔍 Searching for: "${query}"`);
         const env = { ...process.env, PYTHONIOENCODING: 'utf-8' };
-        const pythonProcess = spawn('.venv/Scripts/python', ['crawler.py', '--search', query], { env });
+        const pythonCmd = process.env.NODE_ENV === 'production' ? 'python3' : '.venv/Scripts/python';
+        const pythonProcess = spawn(pythonCmd, ['crawler.py', '--search', query], { env });
 
         let stdout = '';
         let stderr = '';

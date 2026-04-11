@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const voiceBtn = document.getElementById('voiceBtn');
     const attachmentPreview = document.getElementById('attachmentPreview');
 
-    const API_BASE_URL = 'http://localhost:5000';
+    const API_BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : '';
 
     // Persistence State (Multi-Chat Upgrade)
     let allChats = JSON.parse(localStorage.getItem('gemini_all_chats') || '[]');
